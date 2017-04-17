@@ -5,15 +5,28 @@ package com.example.yeol.daggertest.data.model;
  */
 
 public class User {
-    private String name;
-    private int age;
+    String name;
+    int age;
+    String imgURL;
 
     public User(){
+        this.name="empty";
+        this.age=0;
+        this.imgURL="empty";
+    }
+    public User(String name,int age, String imgURL){
+        this.name=name;
+        this.age=age;
+        this.imgURL=imgURL;
 
     }
 
     public void setName(String name){
         this.name=name;
+    }
+
+    public void setImgURL(String imgURL){
+        this.imgURL=imgURL;
     }
 
     public void setAge(int age){
@@ -24,6 +37,9 @@ public class User {
         return this.name;
     }
 
+    public String getImgURL(){
+        return this.imgURL;
+    }
     public int getAge(){
         return this.age;
     }

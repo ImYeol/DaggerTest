@@ -20,6 +20,7 @@
             android:id="@+id/test_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:onClick="@{activity::onClick}"
             android:text="Button"
             android:layout_alignParentTop="true"
             android:layout_alignParentLeft="true"
@@ -37,13 +38,6 @@
             android:layout_marginEnd="67dp"
             android:layout_marginRight="67dp"
             android:text="Button" />
-
-        <android.support.v7.widget.RecyclerView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-        </android.support.v7.widget.RecyclerView>
-
 
     </RelativeLayout>
 </layout>

@@ -1,40 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    android:padding="@dimen/list_item_container_padding"
-    android:gravity="center_vertical"
-    >
-
-    <com.example.yeol.daggertest.ui.CircleImageView
-        android:layout_width="@dimen/list_item_image_size"
-        android:layout_height="@dimen/list_item_image_size"
-        android:id="@+id/thumbnail"/>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     
+    <data>
+        <variable
+            name="user"
+            type="com.example.yeol.daggertest.data.model.User"/>
+    </data>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_margin="@dimen/list_item_container_padding_left">
+        android:orientation="horizontal"
+        android:padding="@dimen/list_item_container_padding"
+        android:gravity="center_vertical"
+        >
 
-        <TextView
-            android:id="@+id/tvName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            />
+        <com.example.yeol.daggertest.ui.CircleImageView
+            android:layout_width="@dimen/list_item_image_size"
+            android:layout_height="@dimen/list_item_image_size"
+            app:error="@{@drawable/starwars}"
+            app:imgURL="@{user.imgURL}"
+            android:id="@+id/thumbnail"/>
 
-        <TextView
-            android:id="@+id/tvAge"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/list_item_text_margin"
-            />
+            android:orientation="vertical"
+            android:layout_margin="@dimen/list_item_container_padding_left">
+
+            <TextView
+                android:id="@+id/tvName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{user.name}"
+                />
+
+            <TextView
+                android:id="@+id/tvAge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{Integer.toString(user.age)}"
+                android:layout_marginTop="@dimen/list_item_text_margin"
+                />
+
+        </LinearLayout>
 
     </LinearLayout>
-
-
-
-
-</LinearLayout>
+</layout>

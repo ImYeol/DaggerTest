@@ -24,7 +24,7 @@ import com.example.yeol.daggertest.R;
  * Created by yeol on 17. 4. 17.
  */
 
-public class CircleImageView extends AppCompatImageView {
+public class CircleImageView extends ImageView {
 
     private static final ScaleType SCALE_TYPE = ScaleType.CENTER_INSIDE;
 
@@ -75,10 +75,6 @@ public class CircleImageView extends AppCompatImageView {
 
         mBorderWidth = a.getDimensionPixelSize(R.styleable.CircleImageView_border_width, DEFAULT_BORDER_WIDTH);
         mBorderColor = a.getColor(R.styleable.CircleImageView_border_color, DEFAULT_BORDER_COLOR);
-
-
-
-
 
         if(a.getBoolean(R.styleable.CircleImageView_shadow, false))
             addShadow();
