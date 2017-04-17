@@ -1,11 +1,13 @@
 package com.example.yeol.daggertest.ui;
 
-import android.support.v7.app.AppCompatActivity;
+import android.databinding.DataBindingUtil;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 
 import com.example.yeol.daggertest.MyApplication;
 import com.example.yeol.daggertest.R;
 import com.example.yeol.daggertest.data.DataManager;
+import com.example.yeol.daggertest.databinding.ActivityMainBinding;
 import com.example.yeol.daggertest.di.components.ActivityComponent;
 import com.example.yeol.daggertest.di.components.DaggerActivityComponent;
 import com.example.yeol.daggertest.di.module.ActivityModule;
@@ -18,12 +20,17 @@ public class MainActivity extends AppCompatActivity {
     DataManager dataManager;
 
     private ActivityComponent activityComponent;
+    // generated Binding class by DataBinding
+    private ActivityMainBinding binding;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
+
+        // DataBinding to set activity value in activity_main.xml
+        binding.setActivity(this);
 
         getActivityComponent().inject(this);
     }
