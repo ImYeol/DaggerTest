@@ -2,7 +2,7 @@ package com.example.yeol.daggertest.di.components;
 
 import com.example.yeol.daggertest.di.PerActivity;
 import com.example.yeol.daggertest.di.module.ActivityModule;
-import com.example.yeol.daggertest.ui.MainActivity;
+import com.example.yeol.daggertest.ui.main.MainActivity;
 import dagger.Component;
 
 /**

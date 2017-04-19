@@ -39,7 +39,12 @@ dependencies {
     compile 'jp.wasabeef:glide-transformations:2.0.2'
     // If you want to use the GPU Filters
     compile 'jp.co.cyberagent.android.gpuimage:gpuimage-library:1.4.1'
+
+    // v7 layout
     compile 'com.android.support:gridlayout-v7:25.3.1'
     compile 'com.android.support:appcompat-v7:25.3.1'
     compile 'com.android.support:recyclerview-v7:25.3.1'
+
+    // android design
+    compile  'com.android.support:design:25.3.1'
 }
