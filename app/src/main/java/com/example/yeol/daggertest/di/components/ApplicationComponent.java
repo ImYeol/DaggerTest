@@ -5,8 +5,8 @@ import android.content.Context;
 
 import com.example.yeol.daggertest.MyApplication;
 import com.example.yeol.daggertest.data.DataManager;
-import com.example.yeol.daggertest.data.DbHelper;
-import com.example.yeol.daggertest.data.SharedPrefsHelper;
+import com.example.yeol.daggertest.data.db.DbHelper;
+import com.example.yeol.daggertest.data.sharedprefs.SharedPrefsHelper;
 import com.example.yeol.daggertest.di.ApplicationContext;
 import com.example.yeol.daggertest.di.module.ApplicationModule;
 

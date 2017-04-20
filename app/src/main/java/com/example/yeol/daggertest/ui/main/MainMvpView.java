@@ -8,4 +8,14 @@ import com.example.yeol.daggertest.ui.base.MvpView;
 
 public interface MainMvpView extends MvpView {
 
+    void showAboutFragment();
+
+    void updateUserName(String currentUserName);
+
+    void updateUserEmail(String currentUserEmail);
+
+    void updateUserProfilePic(String currentUserProfilePicUrl);
+
+    void updateAppVersion();
+
 }

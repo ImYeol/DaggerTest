@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.yeol.daggertest.R;
-import com.example.yeol.daggertest.data.model.User;
+import com.example.yeol.daggertest.data.db.model.User;
 import com.example.yeol.daggertest.databinding.RecyclerViewItemBinding;
 
 import java.util.ArrayList;

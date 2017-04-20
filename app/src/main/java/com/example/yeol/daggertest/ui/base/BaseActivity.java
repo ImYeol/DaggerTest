@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.TextView;
 
+import com.example.yeol.daggertest.MyApplication;
 import com.example.yeol.daggertest.R;
 import com.example.yeol.daggertest.di.components.ActivityComponent;
 import com.example.yeol.daggertest.di.module.ActivityModule;
@@ -33,7 +34,7 @@ public abstract class BaseActivity extends AppCompatActivity implements MvpView,
         super.onCreate(savedInstanceState);
         mActivityComponent = DaggerActivityComponent.builder()
                 .activityModule(new ActivityModule(this))
-                .applicationComponent(((MvpApp) getApplication()).getComponent())
+                .applicationComponent(((MyApplication) getApplication()).getComponent())
                 .build();
     }
 

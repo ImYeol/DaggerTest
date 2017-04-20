@@ -3,8 +3,8 @@
 
     <data>
         <variable
-            name="activity"
-            type="com.example.yeol.daggertest.ui.databind.example.DataBindingActivity"/>
+            name="fragment"
+            type="com.example.yeol.daggertest.ui.databind.DataBindingFragment"/>
     </data>
     <LinearLayout
         android:layout_width="match_parent"

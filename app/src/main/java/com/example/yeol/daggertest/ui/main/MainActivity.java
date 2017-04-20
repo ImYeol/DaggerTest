@@ -1,10 +1,7 @@
 package com.example.yeol.daggertest.ui.main;
 
-import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.view.View;
 
 import com.example.yeol.daggertest.MyApplication;
 import com.example.yeol.daggertest.R;
@@ -14,11 +11,10 @@ import com.example.yeol.daggertest.di.components.ActivityComponent;
 import com.example.yeol.daggertest.di.components.DaggerActivityComponent;
 import com.example.yeol.daggertest.di.module.ActivityModule;
 import com.example.yeol.daggertest.ui.base.BaseActivity;
-import com.example.yeol.daggertest.ui.databind.DataBindingActivity;
 
 import javax.inject.Inject;
 
-public class MainActivity extends BaseActivity implements MainMvpView{
+public class MainActivity extends BaseActivity implements MainMvpView {
 
     @Inject
     DataManager dataManager;
@@ -50,11 +46,6 @@ public class MainActivity extends BaseActivity implements MainMvpView{
         return activityComponent;
     }
 
-    public void onClick(View view){
-        Intent intent = new Intent(this, DataBindingActivity.class);
-        startActivity(intent);
-    }
-
     @Override
     protected void setUp() {
         getActivityComponent().inject(this);
@@ -66,5 +57,15 @@ public class MainActivity extends BaseActivity implements MainMvpView{
 
         // DataBinding to set activity value in activity_main.xml
         binding.setActivity(this);
+    }
+
+    @Override
+    public void onFragmentAttach() {
+
+    }
+
+    @Override
+    public void onFragmentDetach(String tag) {
+
     }
 }
