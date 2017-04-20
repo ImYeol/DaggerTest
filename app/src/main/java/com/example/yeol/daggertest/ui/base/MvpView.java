@@ -6,8 +6,6 @@ package com.example.yeol.daggertest.ui.base;
 
 public interface MvpView {
 
-    void bindAndAttach();
-
     void showLoading();
 
     void hideLoading();

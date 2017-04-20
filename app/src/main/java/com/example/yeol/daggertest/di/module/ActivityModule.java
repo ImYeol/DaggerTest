@@ -1,16 +1,19 @@
 package com.example.yeol.daggertest.di.module;
 
 import android.app.Activity;
-import android.app.Application;
 import android.content.Context;
-import android.content.SharedPreferences;
 
 import com.example.yeol.daggertest.di.ActivityContext;
-import com.example.yeol.daggertest.di.ApplicationContext;
-import com.example.yeol.daggertest.di.DatabaseInfo;
+import com.example.yeol.daggertest.ui.about.AboutMvpPresenter;
+import com.example.yeol.daggertest.ui.about.AboutMvpView;
+import com.example.yeol.daggertest.ui.about.AboutPresenter;
+import com.example.yeol.daggertest.ui.main.MainMvpPresenter;
+import com.example.yeol.daggertest.ui.main.MainMvpView;
+import com.example.yeol.daggertest.ui.main.MainPresenter;
 
 import dagger.Module;
 import dagger.Provides;
+import io.reactivex.disposables.CompositeDisposable;
 
 /**
  * Created by gyl115 on 17. 4. 16.
@@ -35,5 +38,18 @@ public class ActivityModule {
 
     @Provides
     Activity provideActivity(){ return mActivity; }
+
+    @Provides
+    CompositeDisposable provideCompositeDisposable(){ return new CompositeDisposable();}
+
+    @Provides
+    AboutMvpPresenter<AboutMvpView> provideAboutPresenter(AboutPresenter<AboutMvpView> presenter){
+        return presenter;
+    }
+
+    @Provides
+    MainMvpPresenter<MainMvpView> provideMainPresenter(MainPresenter<MainMvpView> presenter){
+        return presenter;
+    }
 
 }

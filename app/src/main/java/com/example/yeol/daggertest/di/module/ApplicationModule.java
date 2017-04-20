@@ -4,6 +4,7 @@ import android.app.Application;
 import android.content.Context;
 import android.content.SharedPreferences;
 
+import com.example.yeol.daggertest.data.DataManager;
 import com.example.yeol.daggertest.di.ApplicationContext;
 import com.example.yeol.daggertest.di.DatabaseInfo;
 
@@ -50,5 +51,10 @@ public class ApplicationModule {
     @Provides
     SharedPreferences provideSharedPreferences(){
         return mApplication.getSharedPreferences("demo-prefs",Context.MODE_PRIVATE);
+    }
+
+    @Provides
+    DataManager provideDataManager(){
+
     }
 }

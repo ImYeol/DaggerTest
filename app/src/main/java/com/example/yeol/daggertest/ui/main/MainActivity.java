@@ -13,14 +13,18 @@ import com.example.yeol.daggertest.databinding.ActivityMainBinding;
 import com.example.yeol.daggertest.di.components.ActivityComponent;
 import com.example.yeol.daggertest.di.components.DaggerActivityComponent;
 import com.example.yeol.daggertest.di.module.ActivityModule;
+import com.example.yeol.daggertest.ui.base.BaseActivity;
 import com.example.yeol.daggertest.ui.databind.DataBindingActivity;
 
 import javax.inject.Inject;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity implements MainMvpView{
 
     @Inject
     DataManager dataManager;
+
+    @Inject
+    MainMvpPresenter<MainMvpView> mPresenter;
 
     private ActivityComponent activityComponent;
     // generated Binding class by DataBinding
@@ -30,12 +34,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
-
-        // DataBinding to set activity value in activity_main.xml
-        binding.setActivity(this);
-
-        getActivityComponent().inject(this);
+        bindAndAttach();
+        setUp();
     }
 
     public ActivityComponent getActivityComponent() {
@@ -53,5 +53,18 @@ public class MainActivity extends AppCompatActivity {
     public void onClick(View view){
         Intent intent = new Intent(this, DataBindingActivity.class);
         startActivity(intent);
+    }
+
+    @Override
+    protected void setUp() {
+        getActivityComponent().inject(this);
+    }
+
+    @Override
+    protected void bindAndAttach() {
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
+
+        // DataBinding to set activity value in activity_main.xml
+        binding.setActivity(this);
     }
 }
