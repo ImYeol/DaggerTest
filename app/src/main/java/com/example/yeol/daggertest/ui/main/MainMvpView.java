@@ -10,6 +10,10 @@ public interface MainMvpView extends MvpView {
 
     void showAboutFragment();
 
+    void showDatabindingFragment();
+
+    void showGallaryFragment();
+
     void updateUserName(String currentUserName);
 
     void updateUserEmail(String currentUserEmail);

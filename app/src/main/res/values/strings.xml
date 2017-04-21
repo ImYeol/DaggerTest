@@ -15,7 +15,9 @@
 
     <!--Drawer Menus-->
     <string name="about">About</string>
-    <string name="logout">Logout</string>
+    <string name="bluetooth">Bluetooth</string>
+    <string name="databinding">Databinding</string>
+    <string name="gallary">Gallary</string>
 
     <string name="some_error">Error</string>
 

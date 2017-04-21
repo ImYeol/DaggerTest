@@ -3,15 +3,16 @@ package com.example.yeol.daggertest.ui.databind;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import com.example.yeol.daggertest.R;
+import com.example.yeol.daggertest.adapter.databinding.DataBindingAdapter;
 import com.example.yeol.daggertest.databinding.RecyclerViewBinding;
 import com.example.yeol.daggertest.ui.base.BaseFragment;
+
+import javax.inject.Inject;
 
 /**
  * Created by yeol on 17. 4. 17.
@@ -22,11 +23,24 @@ public class DataBindingFragment extends BaseFragment
 
     RecyclerViewBinding binding;
 
+    @Inject
+    DataBindingMvpPresenter<DataBindingMvpView> mPresenter;
+
+    public static DataBindingFragment newInstance(){
+        Bundle args = new Bundle();
+        DataBindingFragment dataBindingFragment = new DataBindingFragment();
+        dataBindingFragment.setArguments(args);
+        return dataBindingFragment;
+    }
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         binding = DataBindingUtil.setContentView(this, R.layout.recycler_view);
-        binding.setActivity(this);
+        binding.setFragment(this);
+        View view = binding.getRoot();
+        mPresenter.onAttach(this);
+        return view;
     }
 
     @Override
@@ -39,12 +53,6 @@ public class DataBindingFragment extends BaseFragment
         DataBindingAdapter adapter = new DataBindingAdapter();
         binding.recyclerView.setAdapter(adapter);
 
-    }
-
-
-
-    public void onButtonClick(View view){
-        Toast.makeText(this,"Button Click", Toast.LENGTH_SHORT).show();
     }
 
 }

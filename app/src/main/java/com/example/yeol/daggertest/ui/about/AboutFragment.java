@@ -19,6 +19,8 @@ import javax.inject.Inject;
 
 public class AboutFragment extends BaseFragment implements AboutMvpView {
 
+    public static final String TAG = "AboutFragment";
+
     @Inject
     private AboutMvpPresenter<AboutMvpView> mPresenter;
 

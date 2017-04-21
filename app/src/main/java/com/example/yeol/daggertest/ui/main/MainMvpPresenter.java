@@ -14,7 +14,9 @@ public interface MainMvpPresenter<v extends MvpView> extends MvpPresenter<v> {
 
     void onNavMenuCreated();
 
+    void onDrawerOptionAboutClick();
+
     void onDrawerOptionDataBindingExampleClick();
 
-    void onDrawerOptionBluetoothExampleClick();
+    void onDrawerOptionGallaryClick();
 }

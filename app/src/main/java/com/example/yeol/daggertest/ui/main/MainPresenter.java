@@ -2,7 +2,6 @@ package com.example.yeol.daggertest.ui.main;
 
 import com.example.yeol.daggertest.data.DataManager;
 import com.example.yeol.daggertest.ui.base.BasePresenter;
-import com.example.yeol.daggertest.ui.base.MvpView;
 
 import javax.inject.Inject;
 
@@ -28,7 +27,30 @@ public class MainPresenter<V extends MainMvpView> extends BasePresenter<V>
 
     @Override
     public void onNavMenuCreated() {
+        if (!isViewAttached()) {
+            return;
+        }
+        getMvpView().updateAppVersion();
 
+        final String currentUserName = getDataManager().getCurrentUserName();
+        if (currentUserName != null && !currentUserName.isEmpty()) {
+            getMvpView().updateUserName(currentUserName);
+        }
+
+        final String currentUserEmail = getDataManager().getCurrentUserEmail();
+        if (currentUserEmail != null && !currentUserEmail.isEmpty()) {
+            getMvpView().updateUserEmail(currentUserEmail);
+        }
+
+        final String profilePicUrl = getDataManager().getCurrentUserProfilePicUrl();
+        if (profilePicUrl != null && !profilePicUrl.isEmpty()) {
+            getMvpView().updateUserProfilePic(profilePicUrl);
+        }
+    }
+
+    @Override
+    public void onDrawerOptionAboutClick() {
+        getMvpView().showAboutFragment();
     }
 
     @Override
@@ -37,7 +59,7 @@ public class MainPresenter<V extends MainMvpView> extends BasePresenter<V>
     }
 
     @Override
-    public void onDrawerOptionBluetoothExampleClick() {
+    public void onDrawerOptionGallaryClick() {
 
     }
 }

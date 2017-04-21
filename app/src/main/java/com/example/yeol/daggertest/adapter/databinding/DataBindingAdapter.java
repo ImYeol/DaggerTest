@@ -1,4 +1,4 @@
-package com.example.yeol.daggertest.ui.databind;
+package com.example.yeol.daggertest.adapter.databinding;
 
 import android.databinding.DataBindingUtil;
 import android.support.v7.widget.RecyclerView;

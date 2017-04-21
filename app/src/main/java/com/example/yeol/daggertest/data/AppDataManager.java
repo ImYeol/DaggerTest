@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.res.Resources;
 import com.example.yeol.daggertest.data.db.DbHelper;
 import com.example.yeol.daggertest.data.db.model.User;
-import com.example.yeol.daggertest.data.sharedprefs.SharedPrefsHelper;
 import com.example.yeol.daggertest.di.ApplicationContext;
 
 import javax.inject.Inject;
