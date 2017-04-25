@@ -22,6 +22,9 @@ import android.content.res.AssetManager;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.provider.Settings;
+
+import com.example.yeol.daggertest.R;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.text.SimpleDateFormat;

@@ -4,9 +4,13 @@ import android.app.Activity;
 import android.content.Context;
 
 import com.example.yeol.daggertest.di.ActivityContext;
+import com.example.yeol.daggertest.di.PerActivity;
 import com.example.yeol.daggertest.ui.about.AboutMvpPresenter;
 import com.example.yeol.daggertest.ui.about.AboutMvpView;
 import com.example.yeol.daggertest.ui.about.AboutPresenter;
+import com.example.yeol.daggertest.ui.databind.DataBindingMvpPresenter;
+import com.example.yeol.daggertest.ui.databind.DataBindingMvpView;
+import com.example.yeol.daggertest.ui.databind.DataBindingPresenter;
 import com.example.yeol.daggertest.ui.main.MainMvpPresenter;
 import com.example.yeol.daggertest.ui.main.MainMvpView;
 import com.example.yeol.daggertest.ui.main.MainPresenter;
@@ -48,7 +52,13 @@ public class ActivityModule {
     }
 
     @Provides
+    @PerActivity
     MainMvpPresenter<MainMvpView> provideMainPresenter(MainPresenter<MainMvpView> presenter){
+        return presenter;
+    }
+
+    @Provides
+    DataBindingMvpPresenter<DataBindingMvpView> provideDataBindingPresenter(DataBindingPresenter<DataBindingMvpView> presenter){
         return presenter;
     }
 

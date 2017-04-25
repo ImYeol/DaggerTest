@@ -14,6 +14,7 @@ import android.widget.TextView;
 import com.example.yeol.daggertest.MyApplication;
 import com.example.yeol.daggertest.R;
 import com.example.yeol.daggertest.di.components.ActivityComponent;
+import com.example.yeol.daggertest.di.components.DaggerActivityComponent;
 import com.example.yeol.daggertest.di.module.ActivityModule;
 import com.example.yeol.daggertest.util.CommonUtils;
 

@@ -1,5 +1,7 @@
 package com.example.yeol.daggertest.adapter.databinding;
 
+import com.example.yeol.daggertest.data.db.model.User;
+
 /**
  * Created by yeol on 17. 4. 21.
  */
@@ -11,7 +13,7 @@ public interface DataBindingAdapterConstract {
     }
 
     interface Model {
-        void addItem();
+        void addItem(User user);
         void clearItem();
     }
 }

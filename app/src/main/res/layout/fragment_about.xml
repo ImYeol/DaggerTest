@@ -44,7 +44,6 @@
                 android:layout_marginLeft="@dimen/activity_horizontal_margin"
                 android:background="@color/transparent"
                 android:tint="@color/white"
-                android:onClick="@{fragment::onNavClick}"
                 app:srcCompat="@drawable/ic_keyboard_backspace_24px" />
 
             <TextView

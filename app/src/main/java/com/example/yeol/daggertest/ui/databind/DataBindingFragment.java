@@ -1,6 +1,5 @@
 package com.example.yeol.daggertest.ui.databind;
 
-import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
@@ -21,6 +20,7 @@ import javax.inject.Inject;
 public class DataBindingFragment extends BaseFragment
         implements DataBindingMvpView {
 
+    public static final String TAG="DataBindingFragment";
     RecyclerViewBinding binding;
 
     @Inject
@@ -36,10 +36,13 @@ public class DataBindingFragment extends BaseFragment
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        binding = DataBindingUtil.setContentView(this, R.layout.recycler_view);
+       /* binding = DataBindingUtil.setContentView(this, R.layout.recycler_view);
         binding.setFragment(this);
-        View view = binding.getRoot();
+        View view = binding.getRoot();*/
+        View view = inflater.inflate(R.layout.recycler_view,container,false);
+        getActivityComponent().inject(this);
         mPresenter.onAttach(this);
+        setRecyclerView();
         return view;
     }
 
@@ -52,7 +55,8 @@ public class DataBindingFragment extends BaseFragment
     private void setRecyclerView() {
         DataBindingAdapter adapter = new DataBindingAdapter();
         binding.recyclerView.setAdapter(adapter);
-
+        mPresenter.setAdapterModel(adapter);
+        mPresenter.setAdapterView(adapter);
     }
 
 }

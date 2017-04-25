@@ -5,7 +5,6 @@ import android.content.Context;
 
 import com.example.yeol.daggertest.MyApplication;
 import com.example.yeol.daggertest.data.DataManager;
-import com.example.yeol.daggertest.data.db.DbHelper;
 import com.example.yeol.daggertest.di.ApplicationContext;
 import com.example.yeol.daggertest.di.module.ApplicationModule;
 
@@ -31,9 +30,5 @@ public interface ApplicationComponent {
     Application getApplication();
 
     DataManager getDataManager();
-
-    SharedPrefsHelper getPrefsHelper();
-
-    DbHelper getDbHelper();
 
 }

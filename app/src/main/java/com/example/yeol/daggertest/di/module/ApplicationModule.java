@@ -2,11 +2,19 @@ package com.example.yeol.daggertest.di.module;
 
 import android.app.Application;
 import android.content.Context;
-import android.content.SharedPreferences;
 
+import com.example.yeol.daggertest.data.AppDataManager;
 import com.example.yeol.daggertest.data.DataManager;
+import com.example.yeol.daggertest.data.db.AppDbHelper;
+import com.example.yeol.daggertest.data.db.DbHelper;
+import com.example.yeol.daggertest.data.sharedprefs.AppPreferencesHelper;
+import com.example.yeol.daggertest.data.sharedprefs.PreferencesHelper;
 import com.example.yeol.daggertest.di.ApplicationContext;
 import com.example.yeol.daggertest.di.DatabaseInfo;
+import com.example.yeol.daggertest.di.PreferenceInfo;
+import com.example.yeol.daggertest.util.AppConstants;
+
+import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
@@ -43,18 +51,34 @@ public class ApplicationModule {
     }
 
     @Provides
+    @PreferenceInfo
+    String providePreferenceName() {
+        return AppConstants.PREF_NAME;
+    }
+
+    @Provides
     @DatabaseInfo
     Integer provideDatabaseVersion(){
         return 1;
     }
 
+
     @Provides
-    SharedPreferences provideSharedPreferences(){
-        return mApplication.getSharedPreferences("demo-prefs",Context.MODE_PRIVATE);
+    @Singleton
+    DataManager provideDataManager(AppDataManager appDataManager){
+        return appDataManager;
     }
 
     @Provides
-    DataManager provideDataManager(){
-
+    @Singleton
+    DbHelper provideDbHelper(AppDbHelper appDbHelper){
+        return appDbHelper;
     }
+
+    @Provides
+    @Singleton
+    PreferencesHelper providePreferencesHelper(AppPreferencesHelper appPreferencesHelper) {
+        return appPreferencesHelper;
+    }
+
 }

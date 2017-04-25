@@ -1,4 +1,6 @@
 apply plugin: 'com.android.application'
+apply plugin: 'org.greenrobot.greendao'
+
 
 android {
     compileSdkVersion 25
@@ -10,6 +12,7 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        vectorDrawables.useSupportLibrary = true
     }
     buildTypes {
         release {
@@ -22,6 +25,11 @@ android {
         enabled = true
     }
 }
+
+greendao {
+    schemaVersion 1
+}
+
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
@@ -45,6 +53,10 @@ dependencies {
     compile 'com.android.support:appcompat-v7:25.3.1'
     compile 'com.android.support:recyclerview-v7:25.3.1'
 
+    // android support lib
+    compile "com.android.support:support-vector-drawable:$rootProject.supportLibraryVersion"
+    compile "com.android.support:animated-vector-drawable:$rootProject.supportLibraryVersion"
+
     // android design
     compile  'com.android.support:design:25.3.1'
 
@@ -55,4 +67,9 @@ dependencies {
     compile "io.reactivex.rxjava2:rxjava:$rootProject.rxjava2Version"
     compile "io.reactivex.rxjava2:rxandroid:$rootProject.rxandroidVersion"
 
+    // greenDao - DB helper
+    compile "org.greenrobot:greendao:$rootProject.greenDaoVersion"
+
+    // logger
+    compile "com.jakewharton.timber:timber:$rootProject.timberVersion"
 }

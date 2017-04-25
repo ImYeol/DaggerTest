@@ -27,6 +27,7 @@ import com.example.yeol.daggertest.di.module.ActivityModule;
 import com.example.yeol.daggertest.ui.about.AboutFragment;
 import com.example.yeol.daggertest.ui.base.BaseActivity;
 import com.example.yeol.daggertest.ui.custom.RoundedImageView;
+import com.example.yeol.daggertest.ui.databind.DataBindingFragment;
 
 import javax.inject.Inject;
 
@@ -182,7 +183,7 @@ public class MainActivity extends BaseActivity implements MainMvpView {
         getSupportFragmentManager()
                 .beginTransaction()
                 .disallowAddToBackStack()
-                .add(R.id.cl_root_view, AboutFragment.newInstance(), AboutFragment.TAG)
+                .add(R.id.cl_root_view, DataBindingFragment.newInstance(), DataBindingFragment.TAG)
                 .commit();
     }
 

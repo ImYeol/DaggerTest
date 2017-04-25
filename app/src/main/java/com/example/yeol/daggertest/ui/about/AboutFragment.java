@@ -1,6 +1,5 @@
 package com.example.yeol.daggertest.ui.about;
 
-import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
@@ -22,7 +21,7 @@ public class AboutFragment extends BaseFragment implements AboutMvpView {
     public static final String TAG = "AboutFragment";
 
     @Inject
-    private AboutMvpPresenter<AboutMvpView> mPresenter;
+    AboutMvpPresenter<AboutMvpView> mPresenter;
 
     private FragmentAboutBinding binding;
 
@@ -36,16 +35,25 @@ public class AboutFragment extends BaseFragment implements AboutMvpView {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_about,container,false);
-        View view = binding.getRoot();
-
+        /*binding = DataBindingUtil.inflate(inflater, R.layout.fragment_about,container,false);
+        binding.setFragment(this);
+        View view = binding.getRoot();*/
+        View view = inflater.inflate(R.layout.fragment_about,container,false);
+        getActivityComponent().inject(this);
         // Attach AboutFragment to V in presenter that depends on presenters template V.
         mPresenter.onAttach(this);
 
         return view;
     }
 
-    protected void onNavClick(){
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        binding = FragmentAboutBinding.bind(getView());
+        binding.setFragment(this);
+    }
+
+    public void onNavClick(){
         mPresenter.onNavClick();
     }
 
@@ -57,5 +65,11 @@ public class AboutFragment extends BaseFragment implements AboutMvpView {
     @Override
     public void onDisappeared() {
         getBaseActivity().onFragmentDetach(AboutFragment.class.getSimpleName());
+    }
+
+    @Override
+    public void onDestroyView() {
+        mPresenter = null;
+        super.onDestroyView();
     }
 }

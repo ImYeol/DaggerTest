@@ -2,6 +2,8 @@ package com.example.yeol.daggertest.di.components;
 
 import com.example.yeol.daggertest.di.PerActivity;
 import com.example.yeol.daggertest.di.module.ActivityModule;
+import com.example.yeol.daggertest.ui.about.AboutFragment;
+import com.example.yeol.daggertest.ui.databind.DataBindingFragment;
 import com.example.yeol.daggertest.ui.main.MainActivity;
 import dagger.Component;
 
@@ -17,5 +19,9 @@ import dagger.Component;
 public interface ActivityComponent {
 
     void inject(MainActivity mainActivity);
+
+    void inject(AboutFragment aboutFragment);
+
+    void inject(DataBindingFragment dataBindingFragment);
 
 }
