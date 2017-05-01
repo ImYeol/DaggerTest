@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="/home/yeol/.android/build-cache/d191fd301f2ade86ad5eae94edea8322093d70ad/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="da27a32db6af8954ee8061537c7d476fcb1df46f">
+        <dex dex="/home/yeol/refProject/android/DaggerTest/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_59a5d9bbb5ca0746930c72b0808cbc7cb534fc9f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/yeol/.android/build-cache/9b514474d44a2c8ea4813a76fc1cb3fef80de2cb/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="052f5f840f21174a3ecf6544130194e2652cbb73">
+        <dex dex="/home/yeol/refProject/android/DaggerTest/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_19e4d85d70b30c86ef4ce2b6e5c78dd00afb4a1b/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/yeol/.gradle/caches/modules-2/files-2.1/javax.inject/javax.inject/1/6975da39a7040257bd51d21a231b76c915872d38/javax.inject-1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="6975da39a7040257bd51d21a231b76c915872d38">
+        <dex dex="/home/yeol/refProject/android/DaggerTest/app/build/intermediates/transforms/dex/debug/folders/1000/10/javax.inject-1_69bbf0a2a3e992e592f3edb9bd6bf024edf1f13b/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/yeol/.android/build-cache/3a3225aed5cbe6e82e1cacbd58fe9be35dba8c90/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="3305fe8fabbf56b45fa503d29d691bc84290ff23">
+        <dex dex="/home/yeol/refProject/android/DaggerTest/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_242db7be5cca7f5295ad0bd512f5764d5889439c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/yeol/AndroidSDK/extras/android/m2repository/com/android/support/support-annotations/25.3.1/support-annotations-25.3.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="bf8841d29fa39e077730e7a91222c2ce269fa7c9">
+        <dex dex="/home/yeol/refProject/android/DaggerTest/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-25.3.1_e94dc16d7cdc9edc9b5be2c2a1447528baf6842b/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/yeol/.android/build-cache/50e6df885bf1d8258cb0ba7f9037f2b315095ba5/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="68956f5ba1517b7a3d513ba540548e257741cbae">
+        <dex dex="/home/yeol/refProject/android/DaggerTest/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_81d6daed288b53b71970b0eca9dc186c27ef2518/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/yeol/.gradle/caches/modules-2/files-2.1/org.reactivestreams/reactive-streams/1.0.0/14b8c877d98005ba3941c9257cfe09f6ed0e0d74/reactive-streams-1.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="14b8c877d98005ba3941c9257cfe09f6ed0e0d74">
+        <dex dex="/home/yeol/refProject/android/DaggerTest/app/build/intermediates/transforms/dex/debug/folders/1000/10/reactive-streams-1.0.0_b56f6468ff94c9b26e6929e5c654c7b170b7349a/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/yeol/.android/build-cache/b88e0ec60e7026a86ad0a243964763bcb4e30976/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="7f2f348b830f292429db987f74ba3e67c6752322">
+        <dex dex="/home/yeol/refProject/android/DaggerTest/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_3f2cfed09eda94f68f697c8373e55012ebab0eaa/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/yeol/.android/build-cache/a686eb43e1852c72704e2487cb3799f745cfbe69/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="95519720620b553f63afc789beba9ad582807f7c">
+        <dex dex="/home/yeol/refProject/android/DaggerTest/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_540176c52270d4f01c96f2854962e23a9e474272/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/yeol/.gradle/caches/modules-2/files-2.1/org.greenrobot/greendao-api/3.2.0/c6d610abe1d75d758431c9234917a349abc0a0ac/greendao-api-3.2.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="c6d610abe1d75d758431c9234917a349abc0a0ac">
+        <dex dex="/home/yeol/refProject/android/DaggerTest/app/build/intermediates/transforms/dex/debug/folders/1000/10/greendao-api-3.2.0_b0705e9b8f92fd092c843ae709b1c7e719badfc3/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/yeol/.gradle/caches/modules-2/files-2.1/com.github.bumptech.glide/glide/3.7.0/9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4/glide-3.7.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4">
+        <dex dex="/home/yeol/refProject/android/DaggerTest/app/build/intermediates/transforms/dex/debug/folders/1000/10/glide-3.7.0_1baa52ed025209a71ba69fbbce2d174c293f58d8/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/yeol/.android/build-cache/898e15f5020a0512e838a6194090cf3ea83a49f0/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="45f697922e6f072daa12f8a2995dc77ab03c11da">
+        <dex dex="/home/yeol/refProject/android/DaggerTest/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_4ef696bfce9714bff0d0b10c3af20074f22b3ca7/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/yeol/refProject/android/DaggerTest/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="e17bfa3fb5e24ed17b78b8ebc88e6e9cc20f8a8c">
+        <dex dex="/home/yeol/refProject/android/DaggerTest/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_2abfa603ba7720baa46885efc06b32111c61f4db/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/yeol/refProject/android/DaggerTest/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="510aa6efc159983dfbffa676a0dae37568c0a46f">
+        <dex dex="/home/yeol/refProject/android/DaggerTest/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_b4f7d405ccf9e448e40914c72f008340cf04bf69/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/yeol/.android/build-cache/38b3d33e499ffc6295cadc043c754ddffe3e9a60/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="150252b33b00274cc868578ade018fda0d43a3eb">
+        <dex dex="/home/yeol/refProject/android/DaggerTest/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_65224d5e73d610976d3c76e4f83d51eb46762328/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/yeol/.android/build-cache/1f793bfaaef7819b865892d1e4d8525d9608aa98/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="ebcb0bcf52fab7c586f39717f7cb8de91748b1b1">
+        <dex dex="/home/yeol/refProject/android/DaggerTest/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_9f2b1801c1d35227a58f2d6caeb8b7990c104cfa/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/yeol/.android/build-cache/b695d28180b5af44f3a49a8e278718129a233c00/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="efb8cb62d47d157c29d1521daac7eefd4cb881ee">
+        <dex dex="/home/yeol/refProject/android/DaggerTest/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_3a189cb9c93ef2a941a83a0fd607ff255f8fab76/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/yeol/.android/build-cache/267d3b3a736ce1cbad11b9e228fcd84f972a451b/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="4119ea97a7191ff9b8f33b534ea220448f62f491">
+        <dex dex="/home/yeol/refProject/android/DaggerTest/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_c6a1441820910d5f58325fc231987874788f0974/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/yeol/.gradle/caches/modules-2/files-2.1/com.google.dagger/dagger/2.8/55a1aa1cdcfd06b9950ca856e2bc2790e105146a/dagger-2.8.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="55a1aa1cdcfd06b9950ca856e2bc2790e105146a">
+        <dex dex="/home/yeol/refProject/android/DaggerTest/app/build/intermediates/transforms/dex/debug/folders/1000/10/dagger-2.8_ecc4e7af659ed7507ba9e7a1f0c18f94b80fd3b8/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/yeol/.android/build-cache/499a9d0d4e544414d733507d657b5b2cff873866/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="6ef31f1555bb4cc513ec8d52711365a8b89f3600">
+        <dex dex="/home/yeol/refProject/android/DaggerTest/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_75b6aba2de4de24c540bd9015858a2d0c8b2bc23/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/yeol/.android/build-cache/f11a8135d622c5647f6dba86f5b6aba151bdcbfd/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="38789e20ace9ab7dbd00554bd2673ab424478d3b">
+        <dex dex="/home/yeol/refProject/android/DaggerTest/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_e0c334a39625c9aa316ef36be8cb8fb19f98cc0e/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/yeol/.android/build-cache/c135bff0b480c40533eef22d2d22a5567432bc65/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d4cf6227dd6a2ceff0f7dcf0c324380b7abf2c28">
+        <dex dex="/home/yeol/refProject/android/DaggerTest/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_333cc80d3cf287a45f3660a6525b1cc90e4b478f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/yeol/.android/build-cache/1e9ee8556293048f6745e3b5a9606ad19fe797eb/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="3a1bac2cc31df44dbf1f9bbf2c675319503c9271">
+        <dex dex="/home/yeol/refProject/android/DaggerTest/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_dd515d68fdaf77c9884b698d9495568fc4179f76/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/yeol/.android/build-cache/88aced64128446baacbe2c25a0709bfda86a238c/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="eb9f1cef6b29492df701111c555908cb53dece35">
+        <dex dex="/home/yeol/refProject/android/DaggerTest/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_10695dbc34c99e48e36ba97c47e04de7f23954ad/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/yeol/.android/build-cache/c57062f88efa7938da1b7daa79001b872e603add/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="4a26a1154d053ab11aaf4c3967c42a4d66390991">
+        <dex dex="/home/yeol/refProject/android/DaggerTest/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_74aa08f5d7245b3dc9797ad876fe6ced7a5869d1/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/yeol/.android/build-cache/5d65fe959e4f7762ca625d45eeb5e39787116e36/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="c74c28a44292b6480afe69ddb2c0974f45393a3a">
+        <dex dex="/home/yeol/refProject/android/DaggerTest/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_84a0890e71e2e005c1e46a506a3cf52eeffd63f9/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/yeol/.gradle/caches/modules-2/files-2.1/io.reactivex.rxjava2/rxjava/2.0.6/b0100ee9ceee5d1861371aefc814cee3e78ed23b/rxjava-2.0.6.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="b0100ee9ceee5d1861371aefc814cee3e78ed23b">
+        <dex dex="/home/yeol/refProject/android/DaggerTest/app/build/intermediates/transforms/dex/debug/folders/1000/10/rxjava-2.0.6_96c048bea5607e082a885cf1e0cc1f5987c42375/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/yeol/.gradle/caches/modules-2/files-2.1/org.greenrobot/greendao/3.2.0/e70040568b2929b8e5869ad1ffca8e4386dc53bc/greendao-3.2.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="e70040568b2929b8e5869ad1ffca8e4386dc53bc">
+        <dex dex="/home/yeol/refProject/android/DaggerTest/app/build/intermediates/transforms/dex/debug/folders/1000/10/greendao-3.2.0_041c7e496e1768b130c400289c46da8690d6f905/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/yeol/.android/build-cache/55fd35308fb18912676d218cf04333d74cbc21b9/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/home/yeol/refProject/android/DaggerTest/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_bda1e1aae7b587de0f9079ceb3c79d3c6db38ed3/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/opt/android-studio/gradle/m2repository/com/android/databinding/baseLibrary/2.3.1/baseLibrary-2.3.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="2626e02aa9592edd5386d87408e05727303d9ded">
+        <dex dex="/home/yeol/refProject/android/DaggerTest/app/build/intermediates/transforms/dex/debug/folders/1000/10/baseLibrary-2.3.1_ae02af758c5efbec9dcd63d21e3d708408bb5a5d/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/yeol/.android/build-cache/86d59d77306612b85ed66facfde16c338a819568/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="47635644d0d5c103c1dd8360549eb9ba3225c7d3">
+        <dex dex="/home/yeol/refProject/android/DaggerTest/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_cd8ed518f454cda18ffb0baa3741142b5647b8bc/classes.dex" />
+    </item>
+
+</items>
