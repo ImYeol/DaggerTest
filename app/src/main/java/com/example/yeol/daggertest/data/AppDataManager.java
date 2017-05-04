@@ -1,11 +1,16 @@
 package com.example.yeol.daggertest.data;
 
+import android.content.ComponentName;
 import android.content.Context;
+import android.content.ServiceConnection;
+import android.net.Uri;
+import android.os.IBinder;
 
 import com.example.yeol.daggertest.data.db.DbHelper;
 import com.example.yeol.daggertest.data.db.model.User;
 import com.example.yeol.daggertest.data.sharedprefs.PreferencesHelper;
 import com.example.yeol.daggertest.di.ApplicationContext;
+import com.example.yeol.daggertest.service.BluetoothSyncService;
 
 import java.util.List;
 
@@ -19,11 +24,28 @@ import io.reactivex.Observable;
  */
 
 @Singleton
-public class AppDataManager implements DataManager {
+public class AppDataManager implements DataManager,BluetoothSyncService.Callback {
 
     private Context mContext;
     private DbHelper mDbHelper;
     private PreferencesHelper mSharedPrefsHelper;
+    private BluetoothSyncService mBluetoothService;
+    private boolean isServiceOn = false;
+
+    private ServiceConnection mConn = new ServiceConnection() {
+        @Override
+        public void onServiceConnected(ComponentName name, IBinder service) {
+            BluetoothSyncService.btBinder binder = (BluetoothSyncService.btBinder)service;
+            mBluetoothService = binder.getService();
+            mBluetoothService.setCallback(this);
+            isServiceOn = true;
+        }
+
+        @Override
+        public void onServiceDisconnected(ComponentName name) {
+            isServiceOn = false;
+        }
+    }
 
     @Inject
     public AppDataManager(@ApplicationContext Context context,
@@ -91,6 +113,11 @@ public class AppDataManager implements DataManager {
 
     @Override
     public void setAccessToken(String accessToken) {
+
+    }
+
+    @Override
+    public void onRecevied(Uri uri) {
 
     }
 }

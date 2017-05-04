@@ -4,6 +4,7 @@ import com.example.yeol.daggertest.di.PerActivity;
 import com.example.yeol.daggertest.di.module.ActivityModule;
 import com.example.yeol.daggertest.ui.about.AboutFragment;
 import com.example.yeol.daggertest.ui.databind.DataBindingFragment;
+import com.example.yeol.daggertest.ui.gallary.GallaryFragment;
 import com.example.yeol.daggertest.ui.main.MainActivity;
 import dagger.Component;
 
@@ -23,5 +24,7 @@ public interface ActivityComponent {
     void inject(AboutFragment aboutFragment);
 
     void inject(DataBindingFragment dataBindingFragment);
+
+    void inject(GallaryFragment gallaryFragment);
 
 }

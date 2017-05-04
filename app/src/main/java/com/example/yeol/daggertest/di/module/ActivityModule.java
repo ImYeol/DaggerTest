@@ -11,6 +11,9 @@ import com.example.yeol.daggertest.ui.about.AboutPresenter;
 import com.example.yeol.daggertest.ui.databind.DataBindingMvpPresenter;
 import com.example.yeol.daggertest.ui.databind.DataBindingMvpView;
 import com.example.yeol.daggertest.ui.databind.DataBindingPresenter;
+import com.example.yeol.daggertest.ui.gallary.GallaryMvpPresenter;
+import com.example.yeol.daggertest.ui.gallary.GallaryMvpView;
+import com.example.yeol.daggertest.ui.gallary.GallaryPresenter;
 import com.example.yeol.daggertest.ui.main.MainMvpPresenter;
 import com.example.yeol.daggertest.ui.main.MainMvpView;
 import com.example.yeol.daggertest.ui.main.MainPresenter;
@@ -59,6 +62,11 @@ public class ActivityModule {
 
     @Provides
     DataBindingMvpPresenter<DataBindingMvpView> provideDataBindingPresenter(DataBindingPresenter<DataBindingMvpView> presenter){
+        return presenter;
+    }
+
+    @Provides
+    GallaryMvpPresenter<GallaryMvpView> provideGallaryPresenter(GallaryPresenter<GallaryMvpView> presenter) {
         return presenter;
     }
 

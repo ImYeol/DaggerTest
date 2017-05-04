@@ -72,4 +72,10 @@ dependencies {
 
     // logger
     compile "com.jakewharton.timber:timber:$rootProject.timberVersion"
+
+    // json parser - gson
+    compile "com.google.code.gson:gson:$rootProject.gsonVersion"
+
+    // RxBluetooth
+    compile 'com.github.ivbaranov:rxbluetooth:0.1.6'
 }

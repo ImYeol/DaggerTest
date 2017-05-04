@@ -31,6 +31,7 @@ ext {
     rxandroidVersion = '2.0.1'
     greenDaoVersion = '3.2.0'
     timberVersion = '4.5.1'
+    gsonVersion = '2.8.0'
 
     supportLibraryVersion = '25.3.1'
 
