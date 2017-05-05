@@ -18,8 +18,6 @@
         <com.example.yeol.daggertest.ui.custom.CircleImageView
             android:layout_width="@dimen/list_item_image_size"
             android:layout_height="@dimen/list_item_image_size"
-            app:error="@{@drawable/starwars}"
-            app:imgURL="@{user.imgURL}"
             android:id="@+id/thumbnail"/>
 
         <LinearLayout

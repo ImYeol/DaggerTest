@@ -5,7 +5,7 @@
     <data>
         <variable
             name="picture"
-            type="com.example.yeol.daggertest.data.db.model.BtImageData"/>
+            type="com.example.yeol.daggertest.data.db.model.PictureInfo"/>
     </data>
     <LinearLayout
         android:layout_width="match_parent"
@@ -20,8 +20,8 @@
             android:layout_height="@dimen/list_item_image_size"
             android:id="@+id/thumbnail"/>
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="100dp"
+            android:layout_height="30dp"
             android:id="@+id/picture_name"/>
 
     </LinearLayout>

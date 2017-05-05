@@ -2,22 +2,18 @@ package com.example.yeol.daggertest.data;
 
 import android.content.ComponentName;
 import android.content.Context;
+import android.content.Intent;
 import android.content.ServiceConnection;
-import android.net.Uri;
 import android.os.IBinder;
 
 import com.example.yeol.daggertest.data.db.DbHelper;
-import com.example.yeol.daggertest.data.db.model.User;
+import com.example.yeol.daggertest.data.db.model.PictureInfo;
 import com.example.yeol.daggertest.data.sharedprefs.PreferencesHelper;
 import com.example.yeol.daggertest.di.ApplicationContext;
 import com.example.yeol.daggertest.service.BluetoothSyncService;
 
-import java.util.List;
-
 import javax.inject.Inject;
 import javax.inject.Singleton;
-
-import io.reactivex.Observable;
 
 /**
  * Created by gyl115 on 17. 4. 20.
@@ -30,6 +26,7 @@ public class AppDataManager implements DataManager,BluetoothSyncService.Callback
     private DbHelper mDbHelper;
     private PreferencesHelper mSharedPrefsHelper;
     private BluetoothSyncService mBluetoothService;
+    private BluetoothSyncService.Callback callback;
     private boolean isServiceOn = false;
 
     private ServiceConnection mConn = new ServiceConnection() {
@@ -37,7 +34,7 @@ public class AppDataManager implements DataManager,BluetoothSyncService.Callback
         public void onServiceConnected(ComponentName name, IBinder service) {
             BluetoothSyncService.btBinder binder = (BluetoothSyncService.btBinder)service;
             mBluetoothService = binder.getService();
-            mBluetoothService.setCallback(this);
+            mBluetoothService.setCallback(AppDataManager.this);
             isServiceOn = true;
         }
 
@@ -45,7 +42,7 @@ public class AppDataManager implements DataManager,BluetoothSyncService.Callback
         public void onServiceDisconnected(ComponentName name) {
             isServiceOn = false;
         }
-    }
+    };
 
     @Inject
     public AppDataManager(@ApplicationContext Context context,
@@ -56,15 +53,6 @@ public class AppDataManager implements DataManager,BluetoothSyncService.Callback
         mSharedPrefsHelper = sharedPrefsHelper;
     }
 
-    @Override
-    public Observable<Long> insertUser(User user) {
-        return mDbHelper.insertUser(user);
-    }
-
-    @Override
-    public Observable<List<User>> getAllUsers() {
-        return mDbHelper.getAllUsers();
-    }
 
     @Override
     public Long getCurrentUserId() {
@@ -117,7 +105,18 @@ public class AppDataManager implements DataManager,BluetoothSyncService.Callback
     }
 
     @Override
-    public void onRecevied(Uri uri) {
+    public void onRecevied(PictureInfo picture) {
+        callback.onRecevied(picture);
+    }
 
+    @Override
+    public void startBtSyncService() {
+        Intent intent = new Intent(mContext, BluetoothSyncService.class);
+        mContext.bindService(intent,mConn,Context.BIND_AUTO_CREATE);
+    }
+
+    @Override
+    public void setBluetoothCallback(BluetoothSyncService.Callback callback) {
+        this.callback = callback;
     }
 }

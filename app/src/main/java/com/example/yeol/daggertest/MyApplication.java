@@ -30,6 +30,7 @@ public class MyApplication extends Application {
                                 .applicationModule(new ApplicationModule(this)).build();
         // second pass is for assigning MyApplication dependencies(dataManager)
         mApplicationComponent.inject(this);
+        dataManager.startBtSyncService();
     }
 
     public static MyApplication get(Context context) {

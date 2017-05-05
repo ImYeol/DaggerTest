@@ -1,13 +1,14 @@
 package com.example.yeol.daggertest.adapter.gallery;
 
-import android.net.Uri;
+import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.bumptech.glide.Glide;
 import com.example.yeol.daggertest.R;
-import com.example.yeol.daggertest.data.db.model.User;
+import com.example.yeol.daggertest.data.db.model.PictureInfo;
 import com.example.yeol.daggertest.databinding.GalleryItemBinding;
 
 import java.util.ArrayList;
@@ -20,11 +21,11 @@ import java.util.List;
 public class GalleryAdapter extends RecyclerView.Adapter<GalleryAdapter.ViewHolder>
                                         implements GalleryAdapterConstract.Model,GalleryAdapterConstract.View{
 
-    private List<Uri> Users = new ArrayList<Uri>();
-    private List<String> FileNames = new ArrayList<String>();
+    private List<PictureInfo> pictures = new ArrayList<PictureInfo>();
+    private Context mContext;
 
-    public GalleryAdapter(){
-
+    public GalleryAdapter(Context context){
+        mContext = context;
     }
 
     @Override
@@ -35,13 +36,14 @@ public class GalleryAdapter extends RecyclerView.Adapter<GalleryAdapter.ViewHold
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        User user= Users.get(position);
-        holder.binding.setPicture();
+        PictureInfo picture = pictures.get(position);
+        Glide.with(mContext).load(picture.image).into(holder.binding.thumbnail);
+        holder.binding.pictureName.setText(picture.fileName);
     }
 
     @Override
     public int getItemCount() {
-        return Users.size();
+        return pictures.size();
     }
 
     @Override
@@ -50,13 +52,13 @@ public class GalleryAdapter extends RecyclerView.Adapter<GalleryAdapter.ViewHold
     }
 
     @Override
-    public void addItem(User user) {
-        Users.add(user);
+    public void addItem(PictureInfo picture) {
+        pictures.add(picture);
     }
 
     @Override
     public void clearItem() {
-        Users.clear();
+        pictures.clear();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{

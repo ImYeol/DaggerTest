@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="rxbluetooth-0.1.6">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.android/build-cache/62dc73c49e5ccda14ad5cc3aef9a746bdc671680/output/res" />
+      <root url="jar://$USER_HOME$/.android/build-cache/62dc73c49e5ccda14ad5cc3aef9a746bdc671680/output/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.ivbaranov/rxbluetooth/0.1.6/3a77d9f462ff9de38089c1e33913d65c14f9ef69/rxbluetooth-0.1.6-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

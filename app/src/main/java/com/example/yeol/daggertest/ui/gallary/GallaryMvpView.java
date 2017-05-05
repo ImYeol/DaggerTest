@@ -7,4 +7,5 @@ import com.example.yeol.daggertest.ui.base.MvpView;
  */
 
 public interface GallaryMvpView extends MvpView{
+    void onDisappeared();
 }

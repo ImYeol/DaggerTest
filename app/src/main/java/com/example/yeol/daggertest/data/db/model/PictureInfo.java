@@ -8,7 +8,7 @@ import android.net.Uri;
 
 public class PictureInfo {
 
-    Uri image;
+    public Uri image;
 
-    String fileName;
+    public String fileName;
 }

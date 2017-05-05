@@ -4,8 +4,6 @@ import com.example.yeol.daggertest.data.DataManager;
 
 import javax.inject.Inject;
 
-import io.reactivex.disposables.CompositeDisposable;
-
 /**
  * Created by yeol on 17. 4. 19.
  */
@@ -14,13 +12,13 @@ public class BasePresenter<V extends MvpView> implements MvpPresenter<V> {
 
 
     private final DataManager mDataManager;
-    private final CompositeDisposable mCompositeDisposable;
+  //  private final CompositeDisposable mCompositeDisposable;
     private V mMvpView;
 
     @Inject
-    public BasePresenter(DataManager dataManager, CompositeDisposable compositeDisposable){
+    public BasePresenter(DataManager dataManager){
         mDataManager = dataManager;
-        mCompositeDisposable = compositeDisposable;
+        //mCompositeDisposable = compositeDisposable;
     }
 
     @Override
@@ -30,7 +28,7 @@ public class BasePresenter<V extends MvpView> implements MvpPresenter<V> {
 
     @Override
     public void onDetach() {
-        mCompositeDisposable.dispose();
+     //   mCompositeDisposable.dispose();
         mMvpView = null;
     }
 
@@ -46,7 +44,5 @@ public class BasePresenter<V extends MvpView> implements MvpPresenter<V> {
         return mDataManager;
     }
 
-    public CompositeDisposable getCompositeDisposable(){
-        return mCompositeDisposable;
-    }
+
 }

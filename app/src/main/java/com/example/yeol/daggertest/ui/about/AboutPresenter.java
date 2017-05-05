@@ -5,8 +5,6 @@ import com.example.yeol.daggertest.ui.base.BasePresenter;
 
 import javax.inject.Inject;
 
-import io.reactivex.disposables.CompositeDisposable;
-
 /**
  * Created by yeol on 17. 4. 20.
  */
@@ -15,8 +13,8 @@ public class AboutPresenter<V extends AboutMvpView> extends BasePresenter<V>
         implements AboutMvpPresenter<V> {
 
     @Inject
-    public AboutPresenter(DataManager dataManager, CompositeDisposable compositeDisposable) {
-        super(dataManager, compositeDisposable);
+    public AboutPresenter(DataManager dataManager) {
+        super(dataManager);
     }
 
     @Override

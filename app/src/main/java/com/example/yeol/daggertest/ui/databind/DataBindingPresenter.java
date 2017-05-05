@@ -7,8 +7,6 @@ import com.example.yeol.daggertest.ui.base.BasePresenter;
 
 import javax.inject.Inject;
 
-import io.reactivex.disposables.CompositeDisposable;
-
 /**
  * Created by gyl115 on 17. 4. 20.
  */
@@ -21,8 +19,8 @@ public class DataBindingPresenter<V extends DataBindingMvpView> extends BasePres
 
 
     @Inject
-    public DataBindingPresenter(DataManager dataManager, CompositeDisposable compositeDisposable) {
-        super(dataManager, compositeDisposable);
+    public DataBindingPresenter(DataManager dataManager) {
+        super(dataManager);
     }
 
     @Override

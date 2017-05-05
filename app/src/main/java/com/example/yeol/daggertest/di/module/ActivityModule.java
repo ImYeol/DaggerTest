@@ -20,7 +20,6 @@ import com.example.yeol.daggertest.ui.main.MainPresenter;
 
 import dagger.Module;
 import dagger.Provides;
-import io.reactivex.disposables.CompositeDisposable;
 
 /**
  * Created by gyl115 on 17. 4. 16.
@@ -46,8 +45,6 @@ public class ActivityModule {
     @Provides
     Activity provideActivity(){ return mActivity; }
 
-    @Provides
-    CompositeDisposable provideCompositeDisposable(){ return new CompositeDisposable();}
 
     @Provides
     AboutMvpPresenter<AboutMvpView> provideAboutPresenter(AboutPresenter<AboutMvpView> presenter){

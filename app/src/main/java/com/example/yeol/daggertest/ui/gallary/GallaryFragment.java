@@ -17,7 +17,9 @@ import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
 import com.example.yeol.daggertest.R;
+import com.example.yeol.daggertest.adapter.gallery.GalleryAdapter;
 import com.example.yeol.daggertest.databinding.FragmentGalleryBinding;
 import com.example.yeol.daggertest.ui.base.BaseFragment;
 
@@ -37,9 +39,9 @@ public class GallaryFragment extends BaseFragment implements GallaryMvpView{
     private FragmentGalleryBinding binding;
 
     @Inject
-    private GallaryMvpPresenter<GallaryMvpView> mPresenter;
+    GallaryMvpPresenter<GallaryMvpView> mPresenter;
 
-    public static GallaryFragment getInstance(){
+    public static GallaryFragment newInstance(){
         Bundle bundle = new Bundle();
         GallaryFragment fragment = new GallaryFragment();
         fragment.setArguments(bundle);
@@ -71,6 +73,7 @@ public class GallaryFragment extends BaseFragment implements GallaryMvpView{
         super.onActivityCreated(savedInstanceState);
         binding = FragmentGalleryBinding.bind(getView());
         binding.setFragment(this);
+        setRecyclerViewAdapter();
     }
 
     @Override
@@ -82,6 +85,13 @@ public class GallaryFragment extends BaseFragment implements GallaryMvpView{
     public void onDestroyView() {
         mPresenter = null;
         super.onDestroyView();
+    }
+
+    private void setRecyclerViewAdapter() {
+        GalleryAdapter adapter = new GalleryAdapter(getContext());
+        binding.recyclerView.setAdapter(adapter);
+        mPresenter.setAdapterModel(adapter);
+        mPresenter.setAdapterView(adapter);
     }
 
 }

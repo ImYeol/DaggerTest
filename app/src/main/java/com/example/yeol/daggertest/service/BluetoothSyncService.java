@@ -7,7 +7,7 @@ import android.bluetooth.BluetoothServerSocket;
 import android.bluetooth.BluetoothSocket;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
+import android.graphics.Matrix;
 import android.net.Uri;
 import android.os.Binder;
 import android.os.Environment;
@@ -16,6 +16,7 @@ import android.support.annotation.Nullable;
 import android.util.Log;
 
 import com.example.yeol.daggertest.data.db.model.BtImageData;
+import com.example.yeol.daggertest.data.db.model.PictureInfo;
 import com.example.yeol.daggertest.util.ImageUtil;
 import com.github.ivbaranov.rxbluetooth.BluetoothConnection;
 import com.github.ivbaranov.rxbluetooth.RxBluetooth;
@@ -68,6 +69,8 @@ public class BluetoothSyncService extends Service {
             if (!rxBluetooth.isBluetoothEnabled()) {
                 Log.d(TAG, "Bluetooth should be enabled first!");
             } else {
+                acceptThread = new AcceptThread();
+                acceptThread.start();
                 connectSubscription = rxBluetooth.observeAclEvent() //
                         .observeOn(AndroidSchedulers.mainThread())
                         .subscribeOn(Schedulers.computation())
@@ -77,8 +80,6 @@ public class BluetoothSyncService extends Service {
                                 switch (aclEvent.getAction()) {
                                     case BluetoothDevice.ACTION_ACL_CONNECTED:
                                         //...
-                                        acceptThread = new AcceptThread();
-                                        acceptThread.start();
                                         break;
                                     case BluetoothDevice.ACTION_ACL_DISCONNECT_REQUESTED:
                                         //...
@@ -91,19 +92,51 @@ public class BluetoothSyncService extends Service {
                                         break;
                                 }
                             }
-                        }
-                });
+                        });
             }
 
 
+        }
     }
 
+    @Override
+    public int onStartCommand(Intent intent, int flags, int startId) {
+        if(acceptThread == null){
+            acceptThread = new AcceptThread();
+            acceptThread.start();
+            connectSubscription = rxBluetooth.observeAclEvent() //
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .subscribeOn(Schedulers.computation())
+                    .subscribe(new Action1<AclEvent>() {
+                        @Override
+                        public void call(AclEvent aclEvent) {
+                            switch (aclEvent.getAction()) {
+                                case BluetoothDevice.ACTION_ACL_CONNECTED:
+                                    //...
+                                    break;
+                                case BluetoothDevice.ACTION_ACL_DISCONNECT_REQUESTED:
+                                    //...
+                                    break;
+                                case BluetoothDevice.ACTION_ACL_DISCONNECTED:
+                                    //...
+                                    if (acceptThread.isAlive()) {
+                                        acceptThread.interrupt();
+                                    }
+                                    break;
+                            }
+                        }
+                    });
+        }
+        return super.onStartCommand(intent, flags, startId);
+    }
 
     @Override
     public void onDestroy() {
         super.onDestroy();
         Log.d(TAG, "BluetoothService stopped!");
         rxBluetooth.cancelDiscovery();
+        acceptThread.interrupt();
+        acceptThread = null;
         unsubscribe(connectSubscription);
     }
 
@@ -180,7 +213,12 @@ public class BluetoothSyncService extends Service {
                             BtImageData data = gson.fromJson(string, BtImageData.class);
                             Log.d(TAG,data.getFileName());
                             Uri uri = saveImage(data);
-                            mCallback.onRecevied(uri);
+                            PictureInfo picture = new PictureInfo();
+                            picture.fileName =data.getFileName();
+                            picture.image = uri;
+                            mCallback.onRecevied(picture);
+
+
                         }
                     }, new Action1<Throwable>() {
                         @Override public void call(Throwable throwable) {
@@ -193,9 +231,11 @@ public class BluetoothSyncService extends Service {
         public Uri saveImage(BtImageData data){
             String path = Environment.getExternalStorageDirectory() + data.getFileName();
             File file = new File(path);
+            Matrix m = new Matrix();
+            m.postRotate(0);
             Bitmap bitmap = ImageUtil.getBitmapFromString(data.getRawImageData());
-            bitmap = Bitmap.createBitmap(bitmap, 0, 0, bitmap.getWidth(), bitmap.getHeight(),
-                    rxCameraData.rotateMatrix, false);
+            bitmap = Bitmap.createBitmap(bitmap, 0, 0, bitmap.getWidth(), bitmap.getHeight(),m, false);
+
             try {
                 file.createNewFile();
                 FileOutputStream fos = new FileOutputStream(file);
@@ -205,6 +245,7 @@ public class BluetoothSyncService extends Service {
                 e.printStackTrace();
             }
             Uri uri = Uri.fromFile(file);
+            Log.d(TAG, " uri : "+uri);
             return uri;
         }
     }
@@ -215,6 +256,6 @@ public class BluetoothSyncService extends Service {
 
     public interface Callback {
 
-        void onRecevied(Uri uri);
+        void onRecevied(PictureInfo picture);
     }
 }

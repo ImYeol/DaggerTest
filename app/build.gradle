@@ -64,8 +64,7 @@ dependencies {
     compile "uk.co.chrisjenx:calligraphy:$rootProject.calligraphyVersion"
 
     // reactive
-    compile "io.reactivex.rxjava2:rxjava:$rootProject.rxjava2Version"
-    compile "io.reactivex.rxjava2:rxandroid:$rootProject.rxandroidVersion"
+
 
     // greenDao - DB helper
     compile "org.greenrobot:greendao:$rootProject.greenDaoVersion"

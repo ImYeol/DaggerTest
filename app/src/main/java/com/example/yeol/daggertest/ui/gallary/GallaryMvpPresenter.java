@@ -1,5 +1,6 @@
 package com.example.yeol.daggertest.ui.gallary;
 
+import com.example.yeol.daggertest.adapter.gallery.GalleryAdapterConstract;
 import com.example.yeol.daggertest.ui.base.MvpPresenter;
 
 /**
@@ -11,4 +12,10 @@ public interface GallaryMvpPresenter<V extends GallaryMvpView> extends MvpPresen
     void insertImage(byte[] image);
 
     void sync();
+
+    void setAdapterModel(GalleryAdapterConstract.Model model);
+
+    void setAdapterView(GalleryAdapterConstract.View view);
+
+    void clear();
 }
